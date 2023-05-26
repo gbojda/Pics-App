@@ -1,7 +1,21 @@
 function SearchBar({ onSubmit }) {
-    return <div>SearchBar</div>;
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-    <button onClick={}> alskasd </button>
+       onSubmit('cars');
+    };
+
+
+ 
+
+    return ( <div>
+        <form onSubmit={handleSubmit}>
+        <input />
+        </form>
+    </div>
+    );
+
+   
 }
 
 export default SearchBar;
