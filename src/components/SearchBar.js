@@ -6,7 +6,7 @@ function SearchBar({ onSubmit }) {
     const handleFormSubmit = (event) => {
         event.preventDefault();
 
-       onSubmit('asdf');
+       onSubmit(term);
     };
 
 
@@ -17,7 +17,7 @@ function SearchBar({ onSubmit }) {
 
     return ( 
      <div>
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} >
         <input value={term} onChange={handleChange} />
         </form>
      </div>
