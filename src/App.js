@@ -1,23 +1,31 @@
-import { useState } from 'react';
-import SearchBar from "./components/SearchBar";
-import ImageList from "./components/ImageList";
-import searchImages from "./api";
+import Navbar from "./components/Navbar/navbar";
+import Intro from "./components/Intro/intro";
+import Skills from "./components/Skills/skills";
+// import Works from "./components/Works/works";
+import Contact from "./components/Contact/contact";
+import Footer from "./components/Footer/footer";
+import WeatherApp from "./components/WeatherApp/WeatherApp";
+import { Routes, Route } from 'react-router-dom'
+
+
 
 function App() {
-    const [images, setImages] = useState([]);
-
-    const handleSubmit = async (term) => {
-    const result = await searchImages(term);
-
-    setImages(result);
-    };
-
-    return (
-        <div>
-        <SearchBar onSubmit={handleSubmit} />
-        <ImageList images={images} />
-        </div>
-    );
+  return (
+    <div className="App">
+     
+      
+    <Navbar/>
+    <Routes>
+        
+        <Route path='/' element={<Intro/>} />
+        <Route path='/Skills' element={<Skills/>} />
+        <Route path='/WeatherApp' element={<WeatherApp/>} />
+        <Route path='/Contact' element={<Contact/>} />
+      </Routes>
+      <Footer /> 
+     
+    </div>
+  );
 }
 
 export default App;
